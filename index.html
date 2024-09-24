@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Close Window</title>
+    <title>Done</title>
 </head>
 <body>
-    <p>Done</p>
+    <p>Done. Please close this window manually.</p>
 
     <script>
-        // Close the window after displaying "Done"
+        // Attempt to close the window after 1 second
         window.onload = function() {
             setTimeout(function() {
                 window.close();
-            }, 1000); // Close after 1 second
+            }, 1000); // Wait for 1 second before trying to close
         };
     </script>
 </body>
