@@ -6,14 +6,17 @@
     <title>Done</title>
 </head>
 <body>
-    <p>Done. Please close this window manually.</p>
+    <p>Done. Returning to the previous page...</p>
 
     <script>
-        // Attempt to close the window after 1 second
         window.onload = function() {
             setTimeout(function() {
-                window.close();
-            }, 1000); // Wait for 1 second before trying to close
+                if (window.history.length > 1) {
+                    window.history.back(); // Go back if there is history
+                } else {
+                    window.close();
+                }
+            }, 1000);
         };
     </script>
 </body>
