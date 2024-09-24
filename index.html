@@ -12,7 +12,13 @@
         window.onload = function() {
             setTimeout(function() {
                 if (window.history.length > 1) {
-                    window.history.back(); // Go back if there is history
+                    // Add a query parameter to force a refresh
+                    let previousUrl = document.referrer; // Get the previous page URL
+                    if (previousUrl && !previousUrl.includes("reload=true")) {
+                        window.location.href = previousUrl + (previousUrl.includes("?") ? "&" : "?") + "reload=true";
+                    } else {
+                        window.history.back(); // Just go back if it already has the reload param
+                    }
                 } else {
                     window.close();
                 }
