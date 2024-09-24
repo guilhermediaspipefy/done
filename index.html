@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Done</title>
+    <title>Close Window</title>
 </head>
 <body>
     <p>Done</p>
 
     <script>
-        // Redirect to another page or just refresh after displaying "Done"
+        // Close the window after displaying "Done"
         window.onload = function() {
             setTimeout(function() {
-                window.location.href = "https://example.com"; // Redirect to another URL
-            }, 1000); // Wait for 1 second
+                window.close();
+            }, 1000); // Close after 1 second
         };
     </script>
 </body>
