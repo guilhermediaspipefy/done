@@ -9,6 +9,10 @@
     <p>Done. Returning to the previous page...</p>
 
     <script>
+        function refreshOtherTab() {
+            localStorage.setItem('refresh', Date.now());
+        }
+        
         window.onload = function() {
             setTimeout(function() {
                 if (window.history.length > 1) {
@@ -20,6 +24,7 @@
                         window.history.back(); // Just go back if it already has the reload param
                     }
                 } else {
+                    refreshOtherTab();
                     window.close();
                 }
             }, 5000);
